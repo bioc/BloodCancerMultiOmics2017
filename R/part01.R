@@ -56,7 +56,7 @@ plotPathways = function(dat) {
   wdthsl = c(2)
   hghtsl = c(1.5)
   gtl = gtable(widths=unit(wdthsl, "in"), heights=unit(hghtsl, "in"))
-  gtl = gtable_add_grob(gtl, gg$grobs[[whichInGrob(gg, "guide-box")]], 1, 1)
+  gtl = gtable_add_grob(gtl, gg$grobs[[whichInGrob(gg, "guide-box-right")]], 1, 1)
   
   return(list("figure"=list(width=sum(wdths), height=sum(hghts), plot=gt),
               "legend"=list(width=sum(wdthsl), height=sum(hghtsl), plot=gtl)))
@@ -128,7 +128,7 @@ plotPatientStat = function(pats, gap, ptab=BloodCancerMultiOmics2017::patmeta) {
   wdthsl = c(2)
   hghtsl = c(1.5)
   gtl = gtable(widths=unit(wdthsl, "in"), heights=unit(hghtsl, "in"))
-  gtl = gtable_add_grob(gtl, gg$grobs[[whichInGrob(gg, "guide-box")]], 1, 1)
+  gtl = gtable_add_grob(gtl, gg$grobs[[whichInGrob(gg, "guide-box-right")]], 1, 1)
   
   return(list("figure"=list(width=sum(wdths), height=sum(hghts), plot=gt),
               "legend"=list(width=sum(wdthsl), height=sum(hghtsl), plot=gtl)))
@@ -149,7 +149,7 @@ drawLegends = function(plobj, lng=5, w=2, h=2) { #, alone=FALSE
   for(po in 1:plotlen) {
     gt = gtable_add_grob(gt,
                          plobj[[po]]$grobs[[whichInGrob(plobj[[po]],
-                                                        "guide-box")]], 1, po)
+                                                        "guide-box-right")]], 1, po)
   }
   
   grid.draw(gt)
