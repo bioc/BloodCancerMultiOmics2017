@@ -142,7 +142,7 @@ ggvolc2 = function(df, title, Ycut, color=NA, xlab, maxX, maxY, expY, hghBox,
   ## make grobs
   ggl = ggplotGrob(gl)
   ## fill in the gtable
-  gtL = gtable_add_grob(gtL, ggl$grobs[[whichInGrob(ggl, "guide-box")]], 1, 1)
+  gtL = gtable_add_grob(gtL, ggl$grobs[[whichInGrob(ggl, "guide-box-right")]], 1, 1)
 
   return(list("figure"=list(width=sum(wdths), height=sum(hghts), plot=gt),
               "legend"=list(width=sum(wdthsL), height=sum(hghtsL), plot=gtL)))
@@ -368,9 +368,9 @@ ggheat = function(results, effects, dtab=BloodCancerMultiOmics2017::drugs, ctab=
   wdthsL = c(2,2,2)
   hghtsL = 2
   gtL = gtable(widths=unit(wdthsL, "in"), heights=unit(hghtsL, "in"))
-  gtL = gtable_add_grob(gtL, ggA$grobs[[whichInGrob(ggA, "guide-box")]], 1, 1)
-  gtL = gtable_add_grob(gtL, ggM$grobs[[whichInGrob(ggM, "guide-box")]], 1, 2)
-  gtL = gtable_add_grob(gtL, ggC$grobs[[whichInGrob(ggC, "guide-box")]], 1, 3)
+  gtL = gtable_add_grob(gtL, ggA$grobs[[whichInGrob(ggA, "guide-box-right")]], 1, 1)
+  gtL = gtable_add_grob(gtL, ggM$grobs[[whichInGrob(ggM, "guide-box-right")]], 1, 2)
+  gtL = gtable_add_grob(gtL, ggC$grobs[[whichInGrob(ggC, "guide-box-right")]], 1, 3)
 
   return(list("figure"=list(width=sum(wdths), height=sum(hghts), plot=gt),
               "legend"=list(width=sum(wdthsL), height=sum(hghtsL), plot=gtL)))
